@@ -48,9 +48,9 @@ function InitializeSession (protocol, bankCode, username, username2, password, u
     local response = HTML(connection:get(url))
     response:xpath("//*[@id='zugangsNummer']"):attr("value", username)
     response:xpath("//*[@id='kennwort']"):attr("value", password)
-    connection:request(response:xpath("//*[@id='loginForm']/button"):click())
+    local loginresponse = HTML(connection:request(response:xpath("//*[@id='loginForm']/button"):click()))
 
-    if string.match(connection:getBaseURL(), 'kunde.html') then
+    if (loginresponse:xpath("//*[@class='error_msg']/p"):text() == "Ihre Anmeldung konnte nicht bestätigt werden.") then
         return LoginFailed
     end
 end
