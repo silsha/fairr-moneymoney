@@ -4,10 +4,8 @@ Fetches balances from fairr.de and returns them as securities
 
 ## Extension Setup
 
-1. Open MoneyMoney.app → Preferences → Extensions
-2. Uncheck »Verify digital signatures of extensions«
-3. Select »Help« from the menu bar → »Show Database in Finder«
-4. Copy fairr.lua into »Extensions« folder.
+1. Select »Help« from the menu bar → »Show Database in Finder«
+2. [Download latest release](https://github.com/silsha/fairr-moneymoney/releases/latest/) and copy it into the »Extensions« folder.
 
 ## Account Setup
 
