@@ -30,9 +30,9 @@
 --
 
 WebBanking {
-    version     = 1.00,
+    version     = 1.10,
     country     = "de",
-    url         = "https://login.fairr.de",
+    url         = "https://meine.sutorbank.de",
     services    = {"fairr.de"},
     description = string.format(MM.localizeText("Get balance for %s"), "fairr.de")
 }
