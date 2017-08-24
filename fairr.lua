@@ -101,9 +101,9 @@ function RefreshAccount (account, since)
             name = row:xpath("td[1]/a"):text(),
             market = "Fairr",
             currency = nil,
-            quantity = tonumber((row:xpath("td[3]"):text():gsub(",", "."))),
-            amount = tonumber((row:xpath("td[6]"):text():gsub(",", "."))) + tonumber((row:xpath("td[7]"):text():gsub(",", "."))),
-            price = tonumber((row:xpath("td[4]"):text():gsub("EUR", ""):gsub(",", ".")))
+            quantity = tonumber((row:xpath("td[3]"):text():gsub("%.", ""):gsub(",(%d+)$", ".%1"))),
+            amount = tonumber((row:xpath("td[6]"):text():gsub("%.", ""):gsub(",(%d+)$", ".%1"))) + tonumber((row:xpath("td[7]"):text():gsub("%.", ""):gsub(",(%d+)$", ".%1"))),
+            price = tonumber((row:xpath("td[4]"):text():gsub("EUR", ""):gsub("%.", ""):gsub(",(%d+)$", ".%1")))
         }
         table.insert(transactions, transaction)
 
